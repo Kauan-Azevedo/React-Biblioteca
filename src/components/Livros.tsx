@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import api from "../services/api";
 
 export default function Livros() {
@@ -9,7 +9,6 @@ export default function Livros() {
     const { data } = await api.get("/books");
     const prod = data;
     setLivros(prod);
-    console.log(prod);
   };
 
   let navigate = useNavigate();
@@ -24,11 +23,12 @@ export default function Livros() {
 
   return (
     <section className="livros">
+      <Outlet />
       <h2 className="livros__title">Todos os livros</h2>
       <div className="cards">
         {livros.map((livro: any) => (
           //@ts-ignore-next-line
-          <div className="card" key={livro.id} onCli>
+          <div className="card" key={livro.id}>
             <h2 className="card__title">{livro.title}</h2>
             <p className="card__description">{livro.description}</p>
             <button

@@ -2,7 +2,6 @@ import Navbar from "./components/Navbar";
 import "./sass/style.sass";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
-import { useState } from "react";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Livros from "./components/Livros";
 import Livro from "./components/Livro";
@@ -17,10 +16,12 @@ function App() {
     {
       path: "/books",
       element: <Livros />,
-    },
-    {
-      path: "/books/:id",
-      element: <Livro />,
+      children: [
+        {
+          path: "/books/:id",
+          element: <Livro />,
+        },
+      ],
     },
   ]);
 
