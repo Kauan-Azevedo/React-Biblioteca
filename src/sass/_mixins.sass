@@ -1,0 +1,15 @@
+@use 'variables' as var
+
+@mixin flex()
+    display: flex
+    justify-content: center
+    align-content: center
+
+@mixin container()
+    max-width: var.$container-width
+    margin: 0 auto
+    padding: 0 .7rem
+
+@mixin navOpt()
+    font-size: 17px
+    font-weight: 500
