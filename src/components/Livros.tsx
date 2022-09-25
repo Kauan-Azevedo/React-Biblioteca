@@ -13,8 +13,9 @@ export default function Livros() {
 
   let navigate = useNavigate();
   function routeChange(url: any) {
-    let path = `${url}`;
+    let path = `/books/byId/${url}`;
     navigate(path);
+    window.location.reload(); // ACHAR JEITO MELHOR DEPOIS
   }
 
   useEffect(() => {

@@ -3,19 +3,18 @@ import api from "../services/api";
 import LivroDTO from "../types/livro";
 
 export default function Livro() {
-  let url = window.location.href.slice(28);
+  let getUrl = window.location.href.slice(28);
   const [livro, setLivro] = useState<LivroDTO>();
 
-  const getLivro = async () => {
+  const getLivro = async (url: any) => {
     const { data } = await api.get(`/books/${url}`);
     const prod = data;
     setLivro(prod);
-    console.log(prod);
   };
 
   useEffect(() => {
-    getLivro();
-  }, [window.location.href]);
+    getLivro(getUrl); // PROCURAR JEITO DE MELHORAR DEPOIS
+  }, []);
   return (
     <>
       {livro && (

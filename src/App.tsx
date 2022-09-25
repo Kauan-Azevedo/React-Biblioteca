@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Livros from "./components/Livros";
 import Livro from "./components/Livro";
+import LivroTitle from "./components/LivroTitle";
 
 function App() {
   // ROUTER
@@ -18,10 +19,14 @@ function App() {
       element: <Livros />,
       children: [
         {
-          path: "/books/:id",
+          path: "/books/byId/:id",
           element: <Livro />,
         },
       ],
+    },
+    {
+      path: "/books/byTitle/:title",
+      element: <LivroTitle />,
     },
   ]);
 
