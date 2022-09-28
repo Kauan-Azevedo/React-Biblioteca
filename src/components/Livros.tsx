@@ -24,7 +24,9 @@ export default function Livros() {
 
   return (
     <section className="livros">
-      <Outlet />
+      <div className="modal">
+        <Outlet />
+      </div>
       <h2 className="livros__title">Todos os livros</h2>
       <div className="cards">
         {livros.map((livro: any) => (

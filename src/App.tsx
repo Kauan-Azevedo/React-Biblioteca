@@ -5,7 +5,8 @@ import Main from "./components/Main";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Livros from "./components/Livros";
 import Livro from "./components/Livro";
-import LivroTitle from "./components/LivroTitle";
+import Search from "./components/Search";
+import AddBook from "./components/AddBook";
 
 function App() {
   // ROUTER
@@ -25,8 +26,12 @@ function App() {
       ],
     },
     {
-      path: "/books/byTitle/:title",
-      element: <LivroTitle />,
+      path: "/books/search/",
+      element: <Search />,
+    },
+    {
+      path: "/books/add/",
+      element: <AddBook />,
     },
   ]);
 

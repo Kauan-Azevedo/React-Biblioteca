@@ -17,20 +17,20 @@ export default function Navbar() {
           <div className="divisor">
             <span>|</span>
           </div>
-          <li>
-            <button>Pesquisar Livro</button>
+          <li className="pesquisar">
+            <a href="/books/search">Pesquisar Livro</a>
           </li>
           <div className="divisor">
             <span>|</span>
           </div>
           <li>
-            <button>Excluir Livro</button>
+            <a>Excluir Livro</a>
           </li>
           <div className="divisor">
             <span>|</span>
           </div>
           <li>
-            <button>Adicionar Livro</button>
+            <a href="/books/add/">Adicionar Livro</a>
           </li>
         </ul>
       </nav>

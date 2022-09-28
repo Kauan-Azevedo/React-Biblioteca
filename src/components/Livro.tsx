@@ -16,16 +16,30 @@ export default function Livro() {
     getLivro(getUrl); // PROCURAR JEITO DE MELHORAR DEPOIS
   }, []);
   return (
-    <>
+    <div className="modal__item">
       {livro && (
         <div className="livro">
-          <h2 className="livro__title">{livro?.title}</h2>
-          <p className="livro__body">{livro?.description}</p>
-          <p>Quantidade de paginas: {livro?.qnt_paginas}</p>
-          <p>Quantidade disponiveis: {livro?.amount}</p>
-          <p>Codigo de barras: {livro?.bar_code}</p>
+          <h2 className="livro__title">
+            <span className="livro__head">Titulo:</span> {livro?.title}
+          </h2>
+          <p className="livro__body">
+            <span className="livro__head">Descrição: </span>
+            {livro?.description}
+          </p>
+          <p>
+            <span className="livro__head">Quantidade de paginas: </span>
+            {livro?.qnt_paginas}
+          </p>
+          <p>
+            <span className="livro__head">Quantidade disponiveis: </span>{" "}
+            {livro?.amount}
+          </p>
+          <p>
+            <span className="livro__head">Codigo de barras: </span>{" "}
+            {livro?.bar_code}
+          </p>
         </div>
       )}
-    </>
+    </div>
   );
 }
