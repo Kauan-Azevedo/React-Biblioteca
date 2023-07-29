@@ -33,16 +33,14 @@ export default function Search() {
       </section>
       {livro && (
         <section className="livro">
-          {livro.image_url != "false" && <img src={livro.image_url} />}
+          {livro.image_url !== "false" && <img src={livro.image_url} />}
           <div>{livro.title}</div>
           <div>
             {livro.description}
             {livro.qnt_paginas}
             {livro.amount}
           </div>
-          <div>
-            {livro.bar_code}
-          </div>
+          <div>{livro.bar_code}</div>
         </section>
       )}
     </div>

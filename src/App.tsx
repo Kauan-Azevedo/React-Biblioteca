@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import "./sass/style.sass";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Livros from "./components/Livros";
 import Livro from "./components/Livro";
 import Search from "./components/Search";
